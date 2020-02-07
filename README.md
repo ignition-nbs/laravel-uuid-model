@@ -16,7 +16,7 @@ The new constructor will set `$incrementing` to `FALSE`, the `$keyType` to
 mass-assigned.
 
 Then it generates a version 4 universally unique identifier for the `id`
-attribute, and calls the parent's calls `__construct`.
+attribute, and calls `parent::__construct($attributes)`.
 
 ## Installation
 
