@@ -24,6 +24,16 @@ attribute, and calls `parent::__construct($attributes)`.
 $ composer require ignition-nbs/laravel-uuid-model
 ```
 
+If you do install and use this package, please send a postcard to
+```text
+Ignition NBS Ltd
+5th Floor
+82 King Street
+Manchester
+M2 4WQ
+United Kingdom
+```
+
 ## Usage
 
 There are two things that you must do in order to make successful use of this
