@@ -1,0 +1,25 @@
+{
+    "name": "ignition-nbs/laravel-uuid-model",
+    "description": "Enable Laravel's Eloquent Model to be identified by UUID (string) rather than ID (increment or bigIncrement)",
+    "type": "library",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Guus Leeuw",
+            "email": "guusleeuw@ignitionnbs.co.uk"
+        }
+    ],
+    "require": {
+        "ramsey/uuid": "^3.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "IgnitionNbs\\LaravelUuidModel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "IgnitionNbs\\LaravelUuidModel\\Tests\\": "tests/"
+        }
+    }
+}
