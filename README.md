@@ -4,19 +4,19 @@
 [![Latest version on Packagist](https://img.shields.io/packagist/v/ignition-nbs/laravel-uuid-model?style=plastic)](https://packagist.org/packages/ignition-nbs/laravel-uuid-model)
 [![Total Downloads](https://img.shields.io/packagist/dt/ignition-nbs/laravel-uuid-model?style=plastic)](https://packagist.org/packages/ignition-nbs/laravel-uuid-model)
 
-laravel-uuid-model provides 1 PHP Trait that will overwrite the `__construct`
-for any class that extends the `Illuminate\Database\Eloquent\Model` class.
+laravel-uuid-model provides 1 PHP Trait that implements the initialization
+function and is thus called by the `Illuminate\Database\Eloquent\Model`
+constructor. The `initializeUuidModel` sets `$incrementing` to FALSE, `$keyType`
+to`"string"`, and it will ensure that the `id` attribute can be mass-assigned.
+
+Then it generates a version 4 universally unique identifier for the `id`
+attribute and sets that value already in `$this->attributes['id']`.
 
 It is important to note that this Trait works better then UUID Model classes
 that extend Laravel's `Model` class: Classes that have intermediate parent
 classes (e.g. `App\User`) will not work with those type of UUID Model classes.
 
-The new constructor will set `$incrementing` to `FALSE`, the `$keyType` to
-`'string'`, and it will automatically make sure that the `id` attribute can be
-mass-assigned.
-
-Then it generates a version 4 universally unique identifier for the `id`
-attribute, and calls `parent::__construct($attributes)`.
+This package works with Laravel 5.7, 5.8, 6.x and 7.x.
 
 ## Installation
 

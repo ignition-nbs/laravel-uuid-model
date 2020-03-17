@@ -7,13 +7,15 @@ use Ramsey\Uuid\Uuid;
 trait UuidModel
 {
 	/**
-	 * UuidModel constructor. This constructor merges with
-	 * Laravel\Eloquent\Model::__construct.
+	 * Initialize this Trait.
+	 * Set $incrementing to FALSE, $keyType to "string", and make `id`
+	 * mass-assignable. Lastly, create a version 4 UUID, and assign that to the
+	 * `id` attribute.
 	 *
-	 * @param array $attributes
+	 * @return void
 	 * @throws \Exception
 	 */
-	public function __construct(array $attributes = [])
+	public function initializeUuidModel()
 	{
 		$this->setIncrementing(FALSE);
 		$this->setKeyType('string');
@@ -30,8 +32,6 @@ trait UuidModel
 			$this->guarded($newGuarded);
 		}
 
-		$attributes['id'] = Uuid::uuid4()->toString();
-
-		parent::__construct($attributes);
+		$this->attributes['id'] = Uuid::uuid4()->toString();
 	}
 }
